@@ -2,6 +2,11 @@ from django.shortcuts import render, redirect
 from .models import Expense, Profile
 
 # Create your views here.
+def index(request):
+    return render(request, 'index.html')
+
+
+
 def home(request):
     profile = Profile.objects.get(user=request.user)
     expenses = Expense.objects.filter(user=request.user)
